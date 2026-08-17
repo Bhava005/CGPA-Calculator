@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <main class="container">
+
+        <section class="calculator">
+
+            <h1>CGPA Calculator</h1>
+
+            <p class="description">
+                Enter your subjects, credits, and grades to calculate your CGPA.
+            </p>
+
+            <div id="subjects-container">
+
+                <div class="subject-row">
+
+                    <input
+                        type="text"
+                        class="subject-name"
+                        placeholder="Subject name"
+                    >
+
+                    <input
+                        type="number"
+                        class="credits"
+                        placeholder="Credits"
+                        min="1"
+                        step="1"
+                    >
+
+                    <select class="grade">
+                        <option value="">Grade</option>
+                        <option value="10">A+</option>
+                        <option value="9">A</option>
+                        <option value="8">B+</option>
+                        <option value="7">B</option>
+                        <option value="6">C</option>
+                        <option value="5">D</option>
+                        <option value="0">F</option>
+                    </select>
+
+                    <button
+                        type="button"
+                        class="delete-btn"
+                        onclick="deleteSubject(this)"
+                    >
+                        Delete
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="actions">
+
+                <button
+                    type="button"
+                    id="add-subject-btn"
+                >
+                    Add Subject
+                </button>
+
+                <button
+                    type="button"
+                    id="calculate-btn"
+                    class="calculate-btn"
+                >
+                    Calculate CGPA
+                </button>
+
+            </div>
+
+            <p id="error-message" class="error-message"></p>
+
+            <section class="result">
+
+                <div class="result-item">
+                    <span>Total Credits</span>
+                    <strong id="total-credits">0</strong>
+                </div>
+
+                <div class="result-item cgpa-result">
+                    <span>CGPA</span>
+                    <strong id="cgpa">0.00</strong>
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
