@@ -103,13 +103,29 @@ calculateButton.addEventListener("click", function () {
         }
 
         // Validate credits
-        if (!Number.isFinite(credits) || credits <= 0) {
+if (!Number.isFinite(credits) || credits <= 0) {
 
-            errorMessage.textContent =
-                "Credits must be greater than zero.";
+    errorMessage.textContent =
+        "Credits must be greater than zero.";
 
-            return;
-        }
+    return;
+}
+
+if (!Number.isInteger(credits)) {
+
+    errorMessage.textContent =
+        "Credits must be a whole number.";
+
+    return;
+}
+
+if (credits > 10) {
+
+    errorMessage.textContent =
+        "Credits cannot be greater than 10.";
+
+    return;
+}
 
         // Validate grade
         if (grade === "") {
